@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3EBCE4;
+}
+
+.upperBanner {
+    display: flex;
+    justify-content: center;
+}
+
+#welcome {
+    background-color: #CA2424;
+    border-radius: 15px;
+    font-size: 24px;
+    margin-top: 6em;
+    padding: 5em;
+    width: 60%;
+    text-align: center;
+}
+#choices {
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    margin: 4em;
+}
+
+.boxChoice {
+    background-color: #E8D744;
+    font-size: 24px;
+    font-weight: bolder;
+    border-radius: 15px;
+    margin: 5em 5em 5em 5em;
+    text-align: center;
+    padding: 3em;
+    width: 20%;
+}
