@@ -8,34 +8,12 @@ const storeName2 = document.querySelector("#storeName2");
 submit2btn.addEventListener('click', greet);
 
 function greet() {
-    storeName2.innerText = `Hello, dear ${name1.value} and ${name2.value}, welcome to the game!`;
+    if (name1.value > 0 && name2.value > 0) {
+        storeName2.innerText = `Hello, dear ${name1.value} and ${name2.value}, welcome to the game!`;
+    } else {
+        storeName2.innerText = 'Please put a valid name';
+    }
 }
+    
 
 
-
-
-
-// add class to all divs with foreach loop
-/* {<div id="game">
-<div  class="test"></div>
-<div class="test"></div>
-<div  class="test"></div>
-<div class="test"></div>
-</div>
-<script type="text/javascript">
-let allDivs = document.querySelectorAll("#game .test")
-console.log(allDivs)
-
-allDivs.forEach(el => {
-    el.addEventListener("click", function(event) {
-        let index;
-        allDivs.forEach((element,i) => {
-            if (event.target === element) {
-                console.log(element, i)
-                index=i
-            }
-        })
-        index
-    })
-})
-</script> }*/

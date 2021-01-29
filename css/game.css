@@ -45,19 +45,19 @@ button {
 }
 
 .flex-cnt {
-    display: flex;
-    width: 100%;
-    text-align: center;
+
 }
 
-#restart-button,
-#return-main-page-button {
+#return-main-page-button,
+#restart-button {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
     border: 1px solid black;
     height: 75px;
     width: 150px;
-    margin: 50px 0 0 120px;
+
+
 
 }
+
