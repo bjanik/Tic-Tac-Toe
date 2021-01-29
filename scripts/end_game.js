@@ -2,7 +2,6 @@ let confettiPlayers = [];
 const title = document.querySelector('h1');
 const image_player = document.querySelector('img');
 const link_acceuil = document.querySelector('a');
-localStorage.setItem('winner', 'ia');
 let winner = localStorage.getItem('winner');
 const dataPlayer = {text:`Bravo ${winner}, vous avez gagné! `, pict: '../img/trophy.jpg'};
 const dataIa = {text: 'Dommage vous avez perdu', pict: '../img/sad_face.png'};
