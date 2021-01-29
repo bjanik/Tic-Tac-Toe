@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="../css/stylemain.css">
+    <link rel="stylesheet" href="../css/game.css">
 
 </head>
 
@@ -11,24 +11,42 @@
     <header>
         <h1>Tic-Tac-Toe</h1>
     </header>
-    
+
+        <h2>Welcome to the game made by Bart, Maria and Mouny!</h2>
+        <h3>Player one, what is your name?</h3>
+
+            <input type="text" id="name1" placeholder="name">
+            <p id="storeName1"></p>
+
+
+        <h3>Player two, and your name is?</h3>
+
+            <input type="text" id="name2" placeholder="name">
+            <br>
+            <button id="name2submit">Enter</button>
+            <p id="storeName2"></p>
+
+
+
 <!-- We shall also add a line maybe with the name of the player
 saying whos turn it is-->
 
     <div class="grid">
-        <div class="field" id="nb1">1</div>
-        <div class="field" id="nb2">2</div>
-        <div class="field" id="nb3">3</div>
-        <div class="field" id="nb4">4</div>
-        <div class="field" id="nb5">5</div>
-        <div class="field" id="nb6">6</div>
-        <div class="field" id="nb7">7</div>
-        <div class="field" id="nb8">8</div>
-        <div class="field" id="nb9">9</div>
+        <div class="field" id="0">1</div>
+        <div class="field" id="1">2</div>
+        <div class="field" id="2">3</div>
+        <div class="field" id="3">4</div>
+        <div class="field" id="4">5</div>
+        <div class="field" id="5">6</div>
+        <div class="field" id="6">7</div>
+        <div class="field" id="7">8</div>
+        <div class="field" id="8">9</div>
     </div>
     
-    
-    <button class="restart-button">Play again</button>
-    
+    <div class="flex-cnt">
+        <button id="restart-button">Play again</button>
+        <button id="return-main-page-button">Return to the main page</button>
+    </div>
+    <script src="../scripts/game.js"></script>
 </body>
 </html>
