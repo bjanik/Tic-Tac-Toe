@@ -13,10 +13,65 @@ body {
     min-height: 900px;
 }
 
+.rainEffect { 
+    content: ""; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-image: url(../img/rain-300x300.png); 
+    animation: rain 0.4s linear infinite; 
+    opacity: 0; 
+}
+
+@keyframes rain { 
+    0% { 
+        background-position: 0 0; 
+        opacity: 1; 
+    } 
+
+    100% { 
+        background-position: 8% 80%; 
+        opacity: 1; 
+    } 
+} 
+
+
 h1 {
     color: #ffffff;
     margin-top: -2em;
     text-align: center;
+    font-weight: normal;
+}
+
+#choose {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#choose > img {
+  width: 100%;
+  position : absolute;
+  transform: translatey(0px);
+  animation: floatHand 6s ease-in-out infinite;
+  bottom: -2em;
+  right: 6.5em;
+}
+
+a {
+  background-color: #F59E03;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+  margin-top: 30px;
+  font-weight: bolder;
+  box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 }
 
 .confetti {
@@ -138,6 +193,9 @@ h1 {
     overflow: hidden;
     margin-top: 3em;
     position: relative;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
 }
 
 #img_trophy img {
@@ -157,5 +215,17 @@ h1 {
 	100% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
+  }
+}
+
+@keyframes floatHand {
+	0% {
+		transform: translatex(0px);
+  }
+	50% {
+		transform: translatex(-20px);
 	}
+	100% {
+		transform: translatex(0px);
+  }
 }
