@@ -19,17 +19,17 @@ const winningCombos = [
 const board = ["", "", "", "", "", "", "", "", ""]
 
 
-const getIndexes = (array, value) => {
+const getIndexes = (value) => {
     let indexes = []
-    for (i = 0; i < array.length; i++) {
-        if (array[i] === value)
+    for (i = 0; i < board.length; i++) {
+        if (board[i] === value)
             indexes.push(i)
     }
     return indexes
 }
 
 const checkWin = () => {
-    const indexes = getIndexes(board, symbols[turn])
+    const indexes = getIndexes(symbols[turn])
     for (let i = 0; i < winningCombos.length; i++) {
         if (winningCombos[i].every(val => indexes.includes(val))) {
             winningCombos[i].forEach(combo => fields[combo].style.color = 'red')
@@ -38,18 +38,19 @@ const checkWin = () => {
     }
 }
 
-const enableListeners = () => {
-    fields.forEach(field => field.addEventListener('click', () => {
-        if (gameRunning && field.innerHTML === '') {
-            field.innerHTML = symbols[turn]
-            board[parseInt(field.id)] = field.innerHTML
-            if (checkWin() === true) {
-                console.log("THERE IS A WIN!")
-                gameRunning = false
-            }
-            turn = ++turn % 2
+const play = (field) => {
+    if (gameRunning && field.innerHTML === '') {
+        field.innerHTML = symbols[turn]
+        board[parseInt(field.id)] = field.innerHTML
+        if (checkWin(board) === true) {
+            gameRunning = false
         }
-    }))
+        turn = ++turn % 2
+    }
+}
+
+const enableListeners = () => {
+    fields.forEach(field => field.addEventListener('click', e => play(e.target)))
 }
 
 enableListeners()
@@ -62,5 +63,6 @@ restartButton.addEventListener('click', () => {
         field.style.color = 'black'
     })
     enableListeners()
-    board.fill("", 0, 8)
+    board.fill('', 0, 8)
+    console.log(board)
 })
