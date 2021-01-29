@@ -8,7 +8,7 @@ const storeName2 = document.querySelector("#storeName2");
 submit2btn.addEventListener('click', greet);
 
 function greet() {
-    if (name1.value > 0 && name2.value > 0) {
+    if (name1.value.length > 0 && name2.value.length > 0) {
         storeName2.innerText = `Hello, dear ${name1.value} and ${name2.value}, welcome to the game!`;
     } else {
         storeName2.innerText = 'Please put a valid name';
