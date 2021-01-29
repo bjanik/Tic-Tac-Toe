@@ -5,48 +5,48 @@
 
 body {
     text-align: center;
-    background-color:#85a1c1;
-    color: #202022;
+    background-color:#3EBCE4;
+    color: black;
 }
 
 header {
-    height: 50px;
-    margin-bottom: 10px;
+    height: 3.5em;
+    margin-bottom: 1em;
 }
 
 h1 {
-    margin-top: 35px;
-    font-size: 42px;
+    margin-top: 0.5em;
+    font-size: 3em;
 
+}
+
+h2 {
+    font-size: 2em;
 }
 
 h3 {
-    margin-top: 20px;
+    margin-top: 1em;
+    font-size: 1.5em;
 }
 
 p {
-    margin: 25px;
+    margin: 1em;
     font-weight: bold;
 }
 
 input {
-    margin: 10px;
-    box-shadow: 2px 2px 25px rgb(46, 46, 46);
+    margin: 1em;
 }
 
 #name2submit {
-    box-shadow: 2px 2px 25px rgb(46, 46, 46);
-    margin: 20px;
+    margin: 1.5em;
 
 }
 .grid {
     width: 500px;
     height: 500px;
     margin: 0 auto;
-    border: 5px solid #274b69;
-    box-shadow: 2px 2px 25px rgb(46, 46, 46);
     display: grid;
-
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
@@ -55,20 +55,19 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #c6ccd8;
-    box-shadow: 2px 2px 25px rgb(46, 46, 46);
+    background-color: #E8D744;
 }
 
 #return-main-page-button,
 #restart-button {
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    border: 1px solid black;
-    height: 75px;
-    width: 150px;
-    box-shadow: 2px 2px 25px rgb(46, 46, 46);
-    margin: 20px;
+    font-size: 1.5em;
+    font-weight: bold;;
+    height: 100px;
+    width: 170px;
+    margin: 1.5em;
+    background-color: #CA2424;
+    border-radius: 10%;
 }
 
 .flex-cnt { 
