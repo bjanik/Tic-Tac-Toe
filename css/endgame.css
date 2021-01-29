@@ -42,6 +42,22 @@ h1 {
     color: #ffffff;
     margin-top: -2em;
     text-align: center;
+    font-weight: normal;
+}
+
+#choose {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#choose > img {
+  width: 100%;
+  position : absolute;
+  transform: translatey(0px);
+  animation: floatHand 6s ease-in-out infinite;
+  bottom: -2em;
+  right: 6.5em;
 }
 
 a {
@@ -199,5 +215,17 @@ a {
 	100% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
+  }
+}
+
+@keyframes floatHand {
+	0% {
+		transform: translatex(0px);
+  }
+	50% {
+		transform: translatex(-20px);
 	}
+	100% {
+		transform: translatex(0px);
+  }
 }

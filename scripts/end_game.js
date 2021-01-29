@@ -2,12 +2,10 @@ let confettiPlayers = [];
 const title = document.querySelector('h1');
 const image_player = document.querySelector('img');
 const link_acceuil = document.querySelector('a');
-localStorage.setItem('winner', 'ia');
+localStorage.setItem('winner', '');
 let winner = localStorage.getItem('winner');
-const textPlayer = `Bravo ${winner}, vous avez gagné`;
-const imgPlayer = '../img/trophy.jpg';
-const textIa = 'Dommage vous avez perdu';
-const imgIa = '../img/sad_face.png'
+const dataPlayer = {text:`Bravo ${winner}, vous avez gagné! `, pict: '../img/trophy.jpg'};
+const dataIa = {text: 'Dommage vous avez perdu', pict: '../img/sad_face.png'};
 
 const makeItConfetti = () => {
   const confetti = document.querySelectorAll('.confetti');
@@ -39,16 +37,17 @@ const changeElement = (textCongrat, pathImage) => {
 }
 
 const celebration = () => {
-  if (winner === 'player1' || winner === 'player2') {
-    changeElement(textPlayer, imgPlayer);
+  if (winner !== null && winner !== 'ia' && winner !== '' && winner !== 'undefined') {
+    changeElement(dataPlayer.text, dataPlayer.pict);
     makeItConfetti();
   } else if (winner === 'ia') {
     document.querySelector('body').classList.add('rainEffect');
-    changeElement(textIa, imgIa);
+    changeElement(dataIa.text, dataIa.pict);
     document.body.style.backgroundColor = "#696969";
   }
 }
 
+// activation de la fonction celebration lorsque la page html est chargé
 window.addEventListener('DOMContentLoaded', () => {
   celebration();
 })
