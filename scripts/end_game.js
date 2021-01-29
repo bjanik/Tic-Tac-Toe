@@ -2,7 +2,7 @@ let confettiPlayers = [];
 const title = document.querySelector('h1');
 const image_player = document.querySelector('img');
 const link_acceuil = document.querySelector('a');
-localStorage.setItem('winner', '');
+localStorage.setItem('winner', 'ia');
 let winner = localStorage.getItem('winner');
 const dataPlayer = {text:`Bravo ${winner}, vous avez gagné! `, pict: '../img/trophy.jpg'};
 const dataIa = {text: 'Dommage vous avez perdu', pict: '../img/sad_face.png'};
@@ -43,7 +43,7 @@ const celebration = () => {
   } else if (winner === 'ia') {
     document.querySelector('body').classList.add('rainEffect');
     changeElement(dataIa.text, dataIa.pict);
-    document.body.style.backgroundColor = "#696969";
+    document.body.style.backgroundColor = "#151413";
   }
 }
 
