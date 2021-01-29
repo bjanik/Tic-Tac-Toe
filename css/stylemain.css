@@ -5,7 +5,7 @@
 
 body {
     text-align: center;
-    background-color: rgb(205, 206, 153);
+    background-color: rgb(18, 165, 121);
 }
 
 header {
@@ -16,29 +16,22 @@ h1 {
     margin-top: 50px;
 }
 
-.flex-container {
+.grid {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid black;
+    display: grid;
+
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.field {
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.flex-column {
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-}
-
-.flex-wrap {
-    flex-wrap: wrap;
-    height: 432px;
-    width: 432px;
-}
-
-.fieldSqr {
-    border: 2px solid black;
-    height: 140px;
-    width: 140px;
-    background-color: rgb(123, 127, 190);
+    background-color: cornflowerblue;
 }
 
 .restart-button {
