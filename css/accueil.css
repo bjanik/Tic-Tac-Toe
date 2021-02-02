@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: center;
     align-content: space-between;
-    margin: 4em;
+    margin: 3em;
 }
 
 .boxChoice {
@@ -34,8 +34,12 @@ body {
     font-size: 24px;
     font-weight: bolder;
     border-radius: 15px;
-    margin: 5em 5em 5em 5em;
+    margin: 5em;
     text-align: center;
     padding: 3em;
     width: 20%;
+}
+
+a {
+    text-decoration: None;
 }

@@ -54,10 +54,12 @@ input {
 
 .field {
     border: 1px solid black;
+    font-size: 5em;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #E8D744;
+    border: 3px solid black;
 }
 
 #return-main-page-button,
