@@ -11,22 +11,19 @@
     <header>
         <h1>Tic-Tac-Toe</h1>
     </header>
-
-        <h2>Welcome to the game made by Bart, Maria and Mouny!</h2>
+    <h2>Welcome to the game made by Bart, Maria and Mouny!</h2>
+    <div id='boxname1'>
         <h3>Player one, what is your name?</h3>
 
-            <input type="text" id="name1" placeholder="name">
-            <p id="storeName1"></p>
-
-
+        <input type="text" id="name1" placeholder="name">
+    </div>
+    <div id='boxname2'>
         <h3>Player two, and your name is?</h3>
-
-            <input type="text" id="name2" placeholder="name">
-            <br>
-            <button id="name2submit">Enter</button>
-            <p id="storeName2"></p>
-
-
+        <input type="text" id="name2" placeholder="name">
+    </div>
+    <br>
+    <button id="start">Start</button>
+    <p id="who"></p>
 
 <!-- We shall also add a line maybe with the name of the player
 saying whos turn it is-->
@@ -45,7 +42,7 @@ saying whos turn it is-->
     
     <div class="flex-cnt">
         <button id="restart-button">Play again</button>
-        <button id="return-main-page-button"><a href="accueil.html"></a>Return to the main page</a></button>
+        <button id="return-main-page-button"><a href="accueil.html">Return to the main page</a></button>
     </div>
     <script src="../scripts/game.js"></script>
 </body>
