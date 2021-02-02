@@ -74,6 +74,19 @@ a {
   box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 }
 
+#score_game {
+  display: flex;
+  width: 300px;
+  justify-content: space-evenly;
+  background-color: darkgrey;
+  border-radius: 15px;
+}
+
+#score_game div h2,
+#score_game div p {
+  text-align: center;
+}
+
 .confetti {
   width: 1rem;
   height: 1rem;
