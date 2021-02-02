@@ -75,9 +75,11 @@ a {
 }
 
 #score_game {
-  display: flex;
   width: 300px;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 1/2;
+  grid-row: 1;
   background-color: darkgrey;
   border-radius: 15px;
 }
