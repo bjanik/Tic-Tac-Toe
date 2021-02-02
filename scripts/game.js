@@ -3,12 +3,16 @@ const restartButton = document.querySelector("#restart-button")
 
 const name1 = document.querySelector("#name1");
 const name2 = document.querySelector("#name2");
+const boxname2 = document.querySelector("#boxname2");
 const start = document.querySelector("#start");
 const who = document.querySelector("#who");
+const rounds = document.querySelector("#rounds");
 
+let gameMode = ''
 
 class Game {
-    constructor(name1, name2) {
+    constructor(mode, name1, name2,) {
+        this.mode = mode
         this.players = []
         this.turn = 0
         this.symbols = ['X', 'O']
@@ -27,11 +31,16 @@ class Game {
 
     start() {
         if (!this.isRunning) {
-            if (name1.value.length > 0 && name2.value.length > 0) {
+            if (gameMode === 'single' && name1.value.length > 0 ||
+                 (gameMode === 'multi' && name1.value.length > 0 && name2.value.length > 0)) {
                 this.players = [name1.value, name2.value].sort(() => Math.random() - 0.5)
                 this.isRunning = true
                 enableListeners()
                 who.innerHTML = `It's your turn ${this.players[0]}!`
+                if (gameMode === 'single' && this.players[0] === 'ia') {
+                    this.play(fields[this.randomEmptyField()])
+                }
+
             } else {
                 who.innerText = 'Please enter a valid name';
             }
@@ -51,16 +60,23 @@ class Game {
     }
 
     play(target) {
-        if (this.isRunning) {
+        if (this.isRunning && target.innerHTML === '') {
             target.innerHTML = this.symbols[this.turn]
             this.board[parseInt(target.id)] = target.innerHTML
             if (this.checkWin() === true) {
                 this.isRunning = false
                 localStorage.setItem('winner', this.players[this.turn])
                 setTimeout(() => {document.location.href = 'end_game.html'}, 3000)
-            } else {
+            } else if (this.board.every(e => e != '')) {
+                this.isRunning = false
+            }
+            else {
                 this.turn = ++this.turn % 2
                 who.innerHTML = `It's your turn ${this.players[this.turn]}!`
+            }
+            //We want IA to play just after a human player moves
+            if (gameMode === 'single' && this.players[this.turn] === 'ia') {
+                this.play(fields[this.randomEmptyField()])
             }
         }
     }
@@ -74,9 +90,16 @@ class Game {
             field.style.color = 'black'
         })
     }
+
+    randomEmptyField() {
+        const emptyFields = []
+        this.board.forEach((val, i) => val === '' ? emptyFields.push(i) : null)
+        const random = Math.floor(Math.random() * emptyFields.length)
+        return emptyFields[random]
+    }
 }
 
-let game = new Game()
+let game = new Game(gameMode)
 
 start.addEventListener('click', function () { game.start() })
 
@@ -89,3 +112,18 @@ const enableListeners = () => {
         }
     }))
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const url = new URL(window.location.href)
+    mode = url.searchParams.get('mode')
+
+    if (mode === null || (mode !== 'single' && mode !== 'multi')) {
+        mode = 'single'
+    }
+    gameMode = mode
+    if (gameMode === 'single') {
+        boxname2.parentNode.removeChild(boxname2)
+        name2.value = 'ia'
+    }
+
+})
